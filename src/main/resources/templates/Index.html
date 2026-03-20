@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bùi Dương Tín — Profile</title>
+  <style>
+    :root{
+      --bg:#081027; /* page background */
+      --panel:#0e1622; /* card background */
+      --muted:#9aa6b2;
+      --accent:#20c0ff; /* cyan accent */
+      --accent-2:#6c5ce7;
+      --glass: rgba(255,255,255,0.02);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:linear-gradient(180deg,#071226 0%, #071022 60%);color:#e6f0fb;min-height:100vh}
+
+    /* top nav like image */
+    .nav{height:60px;background:linear-gradient(90deg,#052e2f,#012b36);display:flex;align-items:center;padding:0 28px;box-shadow:0 2px 6px rgba(0,0,0,0.4)}
+    .nav .brand{font-weight:800;color:#7fe0ff}
+    .nav .nav-right{margin-left:auto;color:var(--muted);display:flex;gap:18px}
+
+    .container{max-width:1200px;margin:28px auto;padding:0 28px}
+
+    .layout{display:grid;grid-template-columns:340px 1fr;gap:28px;margin-top:18px}
+
+    /* left card */
+    .profile-card{background:var(--panel);padding:28px;border-radius:var(--radius);border:1px solid var(--glass);position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    .avatar-wrap{display:flex;justify-content:center}
+    .avatar{width:170px;height:170px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(32,192,255,0.08), inset 0 0 40px rgba(108,92,231,0.06)}
+    /* glow behind avatar */
+    .avatar::after{content:"";position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(32,192,255,0.12), rgba(108,92,231,0.06) 35%, transparent 60%);z-index:-1}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    .name{margin-top:16px;text-align:center;font-weight:800;font-size:20px;color:#93e1ff}
+    .role{display:block;text-align:center;color:var(--muted);margin-top:6px;font-weight:600}
+
+    .socials{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+    .social{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;color:var(--muted);display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
+    .social:hover{background:linear-gradient(90deg, rgba(32,192,255,0.06), rgba(108,92,231,0.04));color:#eaffff}
+    .social .icon{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* right column cards */
+    .card{background:var(--panel);padding:22px;border-radius:var(--radius);border:1px solid var(--glass);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .card + .card{margin-top:18px}
+
+    h2.section-title{position:relative;padding-left:18px;margin:0 0 12px 0;font-size:18px}
+    h2.section-title::before{content:"";position:absolute;left:0;top:4px;width:6px;height:28px;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-radius:4px}
+
+    .muted{color:var(--muted)}
+    a.inline{color:#6fe7ff;text-decoration:none;font-weight:700}
+
+    /* education block */
+    .edu .school{font-weight:800;color:#e7f9ff}
+    .edu .major{color:var(--muted);margin-top:6px}
+
+    @media (max-width:980px){.layout{grid-template-columns:1fr;}.avatar{width:140px;height:140px}.container{padding:0 18px}}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="brand">Bùi Dương Tín</div>
+    <div class="nav-right"><div>Blog</div><div>Về tôi</div><div>Liên hệ</div></div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <aside class="profile-card">
+        <div class="avatar-wrap">
+          <!-- replace src with real image if available -->
+          <div class="avatar"><img src="/images/avatar.jpg" alt="avatar" onerror="this.style.background='linear-gradient(135deg,#20c0ff,#6c5ce7)';this.src=''"/></div>
+        </div>
+        <div class="name">Bùi Dương Tín</div>
+        <div class="role">Software Engineering Student</div>
+
+        <div class="socials">
+          <a class="social" href="#"><span class="icon">f</span><span>Facebook</span></a>
+          <a class="social" href="https://github.com/BuiDuongTin" target="_blank" rel="noopener"><span class="icon">gh</span><span>GitHub</span></a>
+          <a class="social" href="mailto:email@example.com"><span class="icon">✉</span><span>Gmail</span></a>
+        </div>
+      </aside>
+
+      <div>
+        <section class="card">
+          <h2 class="section-title">Giới thiệu</h2>
+          <p>Xin chào! Mình là <strong style="color:#9be9ff">Bùi Dương Tín</strong>, sinh viên năm 4 chuyên ngành Công nghệ Phần mềm tại Đại học Công nghệ TP. Hồ Chí Minh (HUTECH).</p>
+          <p>Mình có đam mê với lập trình và đặc biệt yêu thích các chủ đề về <a class="inline" href="#">lập trình mạng</a>, <a class="inline" href="#">Java</a>, và <a class="inline" href="#">JavaScript</a>. Blog này được tạo để chia sẻ kiến thức và kinh nghiệm học tập.</p>
+        </section>
+
+        <section class="card edu" style="margin-top:18px">
+          <h2 class="section-title">Học vấn</h2>
+          <div class="school">Đại học Công nghệ TP. Hồ Chí Minh (HUTECH)</div>
+          <div class="major">Công nghệ Phần mềm</div>
+          <div class="muted" style="margin-top:8px">Năm 4 • 2021 - 2025</div>
+        </section>
+      </div>
+    </div>
+
+
+    <footer style="margin-top:32px">
+      <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:36px; border-radius:12px; background-color:#071022;">
+        <div style="max-width:1100px;margin:0 auto;display:flex;gap:40px;flex-wrap:wrap;color:var(--muted)">
+          <div style="flex:1;min-width:220px">
+            <h3 style="color:var(--accent);margin-top:0">Về tôi</h3>
+            <p>Sinh viên năm 4 – Chuyên ngành Công nghệ Phần mềm, HUTECH. Chia sẻ kiến thức về lập trình Java, JavaScript và lập trình mạng.</p>
+          </div>
+          <div style="min-width:160px">
+            <h3 style="color:var(--accent);margin-top:0">Liên kết</h3>
+            <ul style="list-style:none;padding:0;margin:6px 0 0;color:var(--muted)">
+              <li>📚 <a href="#" style="color:#9be9ff;text-decoration:none">Blog</a></li>
+              <li>👤 <a href="#" style="color:#9be9ff;text-decoration:none">Về tôi</a></li>
+            </ul>
+          </div>
+          <div style="min-width:160px">
+            <h3 style="color:var(--accent);margin-top:0">Kết nối</h3>
+            <ul style="list-style:none;padding:0;margin:6px 0 0;color:var(--muted)">
+              <li>🔵 <a href="#" style="color:#9be9ff;text-decoration:none">Facebook</a></li>
+              <li>💻 <a href="https://github.com/BuiDuongTin" target="_blank" rel="noopener" style="color:#9be9ff;text-decoration:none">GitHub</a></li>
+              <li>✉️ <a href="mailto:email@example.com" style="color:#9be9ff;text-decoration:none">Gmail</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
